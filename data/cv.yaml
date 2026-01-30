@@ -54,14 +54,14 @@ experience:
     url: https://google.com
     description:
       - Unraveled intertwined combination of bizz and fuzz
-      - Enabled groundbraking enablement of Enablers
+      - Enabled groundbreaking enablement of Enablers
       - Cut costs by 50%
     tech:
       - Stoves
       - Shelves
       - Sofas 
-    from: "2018"
-    to: "2010"
+    from: "2010"
+    to: "2018"
 
   - title: Apprentice Enablement Learner
     company: Educating Company 2 
@@ -73,6 +73,8 @@ experience:
       - Brushes
       - Sofas 
       - Ladles
+    from: "2009"
+    to: "2010"
 
   - title: Student Enablement Apprentice 
     company: Educating Company 1 
@@ -84,6 +86,8 @@ experience:
       - Looms 
       - Benches 
       - Chairs
+    from: "2008"
+    to: "2009"
 
 certificates:
   - title: "Business Factory Mechanic"
