@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ personal.name }} - CV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --color-primary: {{ style.colors.primary }};
+            --color-sidebar-bg: {{ style.colors.sidebar_bg }};
+            --color-sidebar-text: {{ style.colors.sidebar_text }};
+            --color-body-text: {{ style.colors.body_text }};
+            --color-muted-text: {{ style.colors.muted_text }};
+            --font-main: {{ style.fonts.main }};
+            --spacing-sidebar-width: {{ style.spacing.sidebar_width }};
+            --spacing-page-padding: {{ style.spacing.page_padding }};
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <!-- Profile Photo -->
+            {% if avatar_base64 %}
+            <div class="sidebar-photo">
+                <img src="data:image/png;base64,{{ avatar_base64 }}" alt="{{ personal.name }}">
+            </div>
+            {% endif %}
+
+            <!-- Contact -->
+            <section class="sidebar-section">
+                <h2 class="sidebar-title">Contact</h2>
+                <div class="contact-list">
+                    {% if personal.contact.location %}
+                    <div class="contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>{{ personal.contact.location }}</span>
+                    </div>
+                    {% endif %}
+                    {% if personal.contact.phone %}
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>{{ personal.contact.phone }}</span>
+                    </div>
+                    {% endif %}
+                    {% if personal.contact.email %}
+                    <div class="contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="mailto:{{ personal.contact.email }}">{{ personal.contact.email }}</a>
+                    </div>
+                    {% endif %}
+                    {% if personal.contact.github %}
+                    <div class="contact-item">
+                        <i class="fa-brands fa-github"></i>
+                        <a href="{{ personal.contact.github.url }}">{{ personal.contact.github.display }}</a>
+                    </div>
+                    {% endif %}
+                    {% if personal.contact.linkedin %}
+                    <div class="contact-item">
+                        <i class="fa-brands fa-linkedin"></i>
+                        <a href="{{ personal.contact.linkedin.url }}">{{ personal.contact.linkedin.display }}</a>
+                    </div>
+                    {% endif %}
+                    {% if personal.contact.website %}
+                    <div class="contact-item">
+                        <i class="fa-solid fa-globe"></i>
+                        <a href="{{ personal.contact.website.url }}">{{ personal.contact.website.display }}</a>
+                    </div>
+                    {% endif %}
+                </div>
+            </section>
+
+            <!-- Skills -->
+            {% if skills %}
+            <section class="sidebar-section">
+                <h2 class="sidebar-title">Skills</h2>
+                <div class="skills-list">
+                    {% for skill in skills %}
+                    <div class="skill-item">
+                        <span class="skill-name">{{ skill.name }}</span>
+                        <span class="skill-stars">
+                            {% for i in range(5) %}
+                                {% if i < skill.level %}★{% else %}☆{% endif %}
+                            {% endfor %}
+                        </span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+            {% endif %}
+
+            <!-- Education -->
+            {% if education %}
+            <section class="sidebar-section">
+                <h2 class="sidebar-title">Education</h2>
+                {% for edu in education %}
+                <div class="sidebar-entry">
+                    <div class="sidebar-entry-title">{{ edu.title }}</div>
+                    <div class="sidebar-entry-subtitle">{{ edu.institution }}</div>
+                    {% if edu.to %}
+                    <div class="sidebar-entry-date">{{ edu.to }}</div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </section>
+            {% endif %}
+
+            <!-- Certificates -->
+            {% if certificates %}
+            <section class="sidebar-section">
+                <h2 class="sidebar-title">Certificates</h2>
+                {% for cert in certificates %}
+                <div class="sidebar-entry">
+                    <div class="sidebar-entry-title">{{ cert.title }}</div>
+                    <div class="sidebar-entry-subtitle">{{ cert.issuer }}</div>
+                </div>
+                {% endfor %}
+            </section>
+            {% endif %}
+
+            <!-- Languages -->
+            {% if languages %}
+            <section class="sidebar-section">
+                <h2 class="sidebar-title">Languages</h2>
+                <div class="language-list">
+                    {% for lang in languages %}
+                    <div class="language-item">
+                        <span class="language-name">{{ lang.name }}</span>
+                        <span class="language-level">{{ lang.level }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+            {% endif %}
+
+            <!-- Side Projects -->
+            {% if projects %}
+            <section class="sidebar-section">
+                <h2 class="sidebar-title">Projects</h2>
+                {% for project in projects %}
+                <div class="sidebar-entry">
+                    <div class="sidebar-entry-title">
+                        {% if project.url %}<a href="{{ project.url }}">{{ project.title }}</a>{% else %}{{ project.title }}{% endif %}
+                    </div>
+                    <div class="sidebar-entry-subtitle">{{ project.subtitle }}</div>
+                    {% if project.tech %}
+                    <div class="sidebar-entry-tech">{{ project.tech | join(' · ') }}</div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </section>
+            {% endif %}
+        </aside>
+
+        <!-- Accent Line -->
+        <div class="accent-line"></div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-text">
+                    <h1 class="name">{{ personal.name | upper }}</h1>
+                    <p class="title">{{ personal.title }}</p>
+                </div>
+            </header>
+
+            <!-- Profile -->
+            {% if personal.summary %}
+            <section class="profile-section">
+                <p class="profile-text">{{ personal.summary }}</p>
+            </section>
+            {% endif %}
+
+            <!-- Experience -->
+            {% if experience %}
+            <section class="section">
+                <h2 class="section-title">Experience</h2>
+                <div class="experience-timeline">
+                {% for job in experience %}
+                <div class="experience-entry{% if loop.first %} first{% endif %}{% if loop.last %} last{% endif %}">
+                    <div class="experience-dates">
+                        <span class="date-to">{{ (job.to if job.to else 'NOW') | upper }}</span>
+                        <span class="date-from">{{ job.from }}</span>
+                    </div>
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <span class="experience-title">{{ job.title }}</span>
+                            <span class="experience-company">
+                                {% if job.url %}<a href="{{ job.url }}">{{ job.company }}</a>{% else %}{{ job.company }}{% endif %}
+                            </span>
+                        </div>
+                        {% if job.description is iterable and job.description is not string %}
+                        <ul class="experience-description">
+                            {% for item in job.description %}
+                            <li>{{ item }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <p class="experience-description">{{ job.description }}</p>
+                        {% endif %}
+                        {% if job.tech %}
+                        <div class="tech-pills">
+                            {% for tech in job.tech %}
+                            <span class="tech-pill">{{ tech }}</span>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+                </div>
+            </section>
+            {% endif %}
+        </main>
+    </div>
+</body>
+</html>

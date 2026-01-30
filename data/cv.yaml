@@ -1,0 +1,139 @@
+style:
+  colors:
+    primary: "#1e3a5f"        # Main accent color (headings, dates)
+    sidebar_bg: "#1e3a5f"     # Sidebar background
+    sidebar_text: "#ffffff"   # Sidebar text
+    body_text: "#333333"      # Main body text
+    muted_text: "#666666"     # Secondary text (dates, subtitles)
+  fonts:
+    main: "Helvetica Neue, Helvetica, Arial, sans-serif"
+  spacing:
+    sidebar_width: "35%"      # Sidebar width percentage
+    page_padding: "12mm"      # Page padding
+
+personal:
+  name: John Curricu
+  title: Staff Enablement Enabler
+  avatar: portrait.jpg
+  summary: >
+    Working in various business factories around the world, delivering fizz and buzz. High
+    understanding of reverse use cases requiring buzz and fizz. Enabled first edge-case
+    handling of bizz and fuzz.
+    Likes painting, hiking, biking, liking and sometimes striking. Used to wearing multiple 
+    hats in agile business factory environments.
+  contact:
+    location: "Anyplace 5, Planet Earth"
+    phone: "+0123456789"
+    email: my@mail.contact
+    github:
+      url: https://github.com/thwbh
+      display: github.com/thwbh
+    linkedin:
+      url: https://techhub.social/
+      display: techhub.social
+    website:
+      url: https://orf.at
+      display: orf.at
+
+experience:
+  - title: Staff Enablement Enabler
+    company: Business Factory 2
+    url: https://google.com
+    description:
+      - 100% success rate delivering fuzz
+      - Prepared buzz-delivering aggregator increasing company wide efficiency
+    tech:
+      - Stoves
+      - Torches
+      - Plates
+    from: "2018"
+    to: null
+
+  - title: Junior Enablement Enabler
+    company: Business Factory 1
+    url: https://google.com
+    description:
+      - Unraveled intertwined combination of bizz and fuzz
+      - Enabled groundbraking enablement of Enablers
+      - Cut costs by 50%
+    tech:
+      - Stoves
+      - Shelves
+      - Sofas 
+    from: "2018"
+    to: "2010"
+
+  - title: Apprentice Enablement Learner
+    company: Educating Company 2 
+    url: https://google.com 
+    description:
+      - Learned enabling Enablement 
+      - Improved enablement learning progress by 20%
+    tech: 
+      - Brushes
+      - Sofas 
+      - Ladles
+
+  - title: Student Enablement Apprentice 
+    company: Educating Company 1 
+    url: https://google.com 
+    description:
+      - Studied students enabling Enablement 
+      - Raised efficiency of studying by 100% 
+    tech: 
+      - Looms 
+      - Benches 
+      - Chairs
+
+certificates:
+  - title: "Business Factory Mechanic"
+    issuer: "Institute of Business Certificate Issuers"
+
+  - title: "Professional for Fizzbuzz buzzfizzing"
+    issuer: "University of Scienced Appliances"
+
+education:
+  - title: Lead Guitarist
+    institution: "School of Rock"
+    to: "2005"
+
+projects:
+  - title: looming-loom
+    url: https://bksy.app
+    subtitle: "Weave your dreams!"
+    tech:
+      - Ladles
+      - Looms
+      - Stoves
+
+  - title: cleaningator
+    url: https://digg.it
+    subtitle: "Shoeshine for mere mortals."
+    tech:
+      - Brushes
+
+skills:
+  - name: Stoves
+    level: 5
+  - name: Plates
+    level: 5
+  - name: Sofas
+    level: 4
+  - name: Chairs
+    level: 4
+  - name: Pillows
+    level: 5
+  - name: Brushes
+    level: 4
+  - name: Benches
+    level: 3
+  - name: Ladles
+    level: 3
+  - name: Looms
+    level: 4
+
+languages:
+  - name: English
+    level: native
+  - name: French
+    level: C1

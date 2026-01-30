@@ -1,0 +1,415 @@
+/* CV Stylesheet - Dark Sidebar Layout (WeasyPrint optimized) */
+/* Colors, fonts, and spacing are configured via CSS variables from YAML */
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: var(--font-main);
+  font-size: 10pt;
+  line-height: 1.45;
+  color: var(--color-body-text);
+  background: white;
+  height: 297mm;
+  width: 210mm;
+}
+
+.cv-container {
+  display: flex;
+  flex-direction: row;
+  height: 297mm;
+  width: 210mm;
+  overflow: hidden;
+}
+
+/* ==================== SIDEBAR ==================== */
+
+.sidebar {
+  width: var(--spacing-sidebar-width);
+  min-width: var(--spacing-sidebar-width);
+  max-width: var(--spacing-sidebar-width);
+  height: 297mm;
+  background: var(--color-sidebar-bg);
+  color: var(--color-sidebar-text);
+  padding: 10mm 8mm;
+  float: left;
+  overflow: hidden;
+}
+
+/* Sidebar Photo */
+.sidebar-photo {
+  text-align: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.7rem;
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.12); */
+}
+
+.sidebar-photo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.sidebar-section {
+  margin-bottom: 1rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.sidebar-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.sidebar-title {
+  font-size: 8pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 0.5rem;
+  opacity: 0.85;
+}
+
+/* Contact */
+.contact-list {
+  display: block;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 8pt;
+  margin-bottom: 0.4rem;
+}
+
+.contact-item:last-child {
+  margin-bottom: 0;
+}
+
+.contact-item i {
+  width: 12px;
+  min-width: 12px;
+  text-align: center;
+  font-size: 8pt;
+  opacity: 0.75;
+}
+
+.contact-item a {
+  color: var(--color-sidebar-text);
+  text-decoration: none;
+}
+
+/* Skills */
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.skill-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 8pt;
+}
+
+.skill-name {
+  font-weight: 500;
+}
+
+.skill-stars {
+  font-size: 7pt;
+  letter-spacing: -1px;
+  opacity: 0.9;
+}
+
+/* Languages */
+.language-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.language-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 8pt;
+}
+
+.language-name {
+  font-weight: 500;
+}
+
+.language-level {
+  opacity: 0.7;
+  font-style: italic;
+}
+
+/* Sidebar Entries (Education, Certificates, Projects) */
+.sidebar-entry {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-entry:last-child {
+  margin-bottom: 0;
+}
+
+.sidebar-entry-title {
+  font-weight: 600;
+  font-size: 8.5pt;
+  margin-bottom: 0.05rem;
+}
+
+.sidebar-entry-title a {
+  color: var(--color-sidebar-text);
+  text-decoration: none;
+}
+
+.sidebar-entry-subtitle {
+  font-size: 7.5pt;
+  opacity: 0.75;
+  line-height: 1.25;
+}
+
+.sidebar-entry-date {
+  font-size: 7pt;
+  opacity: 0.55;
+  margin-top: 0.1rem;
+}
+
+.sidebar-entry-tech {
+  font-size: 7pt;
+  opacity: 0.65;
+  margin-top: 0.1rem;
+}
+
+/* ==================== ACCENT LINE ==================== */
+
+.accent-line {
+  width: 4px;
+  min-width: 4px;
+  max-width: 4px;
+  height: 297mm;
+  flex-shrink: 0;
+  background: linear-gradient(
+    to bottom,
+    #1e3a5f 0%,
+    #7ba3c9 15%,
+    #7ba3c9 85%,
+    #1e3a5f 100%
+  );
+}
+
+/* ==================== MAIN CONTENT ==================== */
+
+.main-content {
+  flex: 1;
+  height: 297mm;
+  padding: 10mm 10mm 10mm 12mm;
+  background: #fff;
+  float: left;
+  overflow: hidden;
+}
+
+/* Header */
+.header {
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.name {
+  font-size: 24pt;
+  font-weight: 700;
+  color: var(--color-body-text);
+  letter-spacing: 2px;
+  margin-bottom: 0.1rem;
+}
+
+.title {
+  font-size: 11pt;
+  color: var(--color-primary);
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Profile Section */
+.profile-section {
+  margin-bottom: 0.7rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.profile-section .profile-text {
+  font-size: 8pt;
+  line-height: 1.45;
+  color: var(--color-body-text);
+  text-align: justify;
+}
+
+/* Sections */
+.section {
+  margin-bottom: 0.8rem;
+}
+
+.section-title {
+  font-size: 10pt;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 0.7rem;
+}
+
+/* Experience Timeline */
+.experience-timeline {
+  position: relative;
+  margin-left: 2.8rem;
+  padding-left: 0.7rem;
+}
+
+.experience-timeline::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 0.35rem;
+  bottom: 0.35rem;
+  width: 2px;
+  background: #e5e5e5;
+}
+
+/* Experience Entries */
+.experience-entry {
+  display: block;
+  margin-bottom: 1.4rem;
+  position: relative;
+}
+
+.experience-entry:last-child {
+  margin-bottom: 0;
+}
+
+.experience-dates {
+  position: absolute;
+  left: -3.5rem;
+  width: 2.6rem;
+  text-align: right;
+  padding-right: 0.6rem;
+  padding-top: 0.05rem;
+}
+
+.date-to {
+  display: block;
+  font-size: 7.5pt;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.date-from {
+  display: block;
+  font-size: 7.5pt;
+  color: var(--color-muted-text);
+}
+
+.experience-content {
+  position: relative;
+}
+
+.experience-entry::before {
+  content: "";
+  position: absolute;
+  left: calc(-0.7rem - 4px);
+  top: 0.35rem;
+  width: 8px;
+  height: 8px;
+  background: var(--color-primary);
+  border-radius: 50%;
+}
+
+.experience-header {
+  margin-bottom: 0.2rem;
+}
+
+.experience-title {
+  display: block;
+  font-weight: 700;
+  font-size: 9.5pt;
+  color: var(--color-body-text);
+}
+
+.experience-company {
+  display: block;
+  font-size: 8.5pt;
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.experience-company a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+p.experience-description {
+  font-size: 8pt;
+  color: var(--color-body-text);
+  line-height: 1.4;
+  margin-bottom: 0.3rem;
+  text-align: justify;
+}
+
+ul.experience-description {
+  font-size: 8pt;
+  color: var(--color-body-text);
+  line-height: 1.5;
+  margin-bottom: 0.3rem;
+  margin-left: 1rem;
+  padding-left: 0;
+}
+
+ul.experience-description li {
+  margin-bottom: 0.15rem;
+}
+
+ul.experience-description li::marker {
+  color: var(--color-primary);
+}
+
+/* Tech Pills */
+.tech-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+  margin-top: 0.25rem;
+}
+
+.tech-pill {
+  font-size: 6.5pt;
+  padding: 0.1rem 0.35rem;
+  background: rgba(30, 58, 95, 0.08);
+  color: var(--color-primary);
+  border-radius: 2px;
+  font-weight: 500;
+}
+
+/* Print optimizations */
+@media print {
+  html,
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
